@@ -46,13 +46,13 @@ class Student extends Person {
 
 class ProjectManager extends Instructor {
     constructor (info, instructorInfo, pmInfo) {
-        super(instructorInfo);
+        super(info, instructorInfo);
         this.gradClassName = pmInfo.gradClassName;
         this.favInstructor = pmInfo.favInstructor;
-        this.channel = pmInfo.channel;
+        // this.channel = pmInfo.channel;
     }
     standup(slackChannel){
-        return `${this.name} announces to ${this.channel}, @${this.channel} standy times!`
+        return `${this.name} announces to ${slackChannel}, @${slackChannel} standy times!`
     }
 }
 
@@ -61,4 +61,4 @@ var newInstructor = new Instructor(
     {name: 'Ryan', age: 28, location: 'San Frasisco'},
     {speciality: "redux", favLanguage: "JavaScript, Python and Ruby", catchPhrase: "Don't forget the homies!!!"});
 var newStudent = new Student ({name: "jones", age: 24, location: "London"}, {previousBackground: "logistics", className: "webeu3", favSubjects: ["python", "html", "javaScript", "c#"]});
-var pm = new ProjectManager({name: "jones", age: 24, location: "London"},{previousBackground: "logistics", className: "webeu3", favSubjects: "javaScript"}, {gradClassName:"CS1", favInstructor: "Sean", channel: "new slack"});
+var pm = new ProjectManager({name: "jones", age: 24, location: "London"},{previousBackground: "logistics", className: "webeu3", favSubjects: "javaScript"}, {gradClassName:"CS1", favInstructor: "Sean"});
